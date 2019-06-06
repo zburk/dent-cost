@@ -19,23 +19,37 @@ class Index extends React.Component {
     }
   }
 
+  totalCost() {
+    return 80000;
+  }
+
   render() {
     return (
       <Layout>
         <div className="flex">
           <div className="flex-1">
-            <YearCost title="Year 1"></YearCost>
+            <div class="flex flex-col">
+              <div className="text-2xl">&nbsp;</div>
+              <div>Tuition</div>
+              <div>Fees</div>
+              <div>Total</div>
+            </div>
           </div>
           <div className="flex-1">
-            <YearCost title="Year 2"></YearCost>
+            <YearCost title="Year 1" costs={ { tuition: 20000, fees: 4000 } }></YearCost>
           </div>
           <div className="flex-1">
-            <YearCost title="Year 3"></YearCost>
+            <YearCost title="Year 2" costs={ { tuition: 20000, fees: 4000 } }></YearCost>
           </div>
           <div className="flex-1">
-            <YearCost title="Year 4"></YearCost>
+            <YearCost title="Year 3" costs={ { tuition: 20000, fees: 4000 } }></YearCost>
+          </div>
+          <div className="flex-1">
+            <YearCost title="Year 4" costs={ { tuition: 20000, fees: 4000 } }></YearCost>
           </div>
         </div>
+
+        <h2 className="text-xl">Total cost: { this.totalCost() }</h2>
       </Layout>
     );
   }
